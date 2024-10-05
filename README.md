@@ -2,22 +2,16 @@
 
 Two trading strategies were implemented in this repository: Weighted Moving Average (WMA) and Cheapest Production Calculator.
 
-## Weighted Moving Average (WMA) Calculator
-
+## Weighted Moving Average Calculator
 ### Overview
 
-This Python script calculates the Weighted Moving Average (WMA) of trades for different assets. Each trade consists of a key (symbol), value (price), quantity, and a sequence number. The WMA is computed based on the value and quantity of trades, considering the latest sequence number for each asset. The program ignores trades with outdated sequence numbers to ensure only the most recent data is included in the WMA calculation.
+The `wma.py` script calculates the WMA of trades for different assets. Each trade consists of a key (symbol), value (price), quantity, and a sequence number. The WMA is computed based on the value and quantity of trades, considering the latest sequence number for each asset. The program ignores trades with outdated sequence numbers to ensure only the most recent data is included in the WMA calculation.
 
 ### Key Features
 - Handle multiple trades for different assets (e.g., "AAPL", "GOOGL")
 - Ignore outdated trades based on the sequence number
 - Calculate WMA for each asset after every valid trade
 - Output the WMA in real-time as new trades are processed
-
-### Example Usage
-- Several example trades are defined and passed to the calculate_wma() function.
-- The WMA for each asset is calculated and printed in real-time.
-- Trades with outdated sequence numbers (like the last "AAPL" trade with sequence 1) are ignored.
 
 ### Example
 
@@ -44,13 +38,10 @@ AAPL: 150.11
 GOOGL: 2770.00
 ```
 
-### Prerequisites
-- Python 3.x
-
 ## Cheapest Production Calculator
 ### Overview
 
-This Python script provides a solution for determining the cheapest production cost for a given target product based on a set of recipes. The recipes define how each product can either be directly purchased or constructed from other products. If a product can be constructed, the script explores whether it's cheaper to buy the components or build them from other subcomponents recursively. The result is the minimum cost to produce the target product.
+The `cheapest_production.py` script provides a solution for determining the cheapest production cost for a given target product based on a set of recipes. The recipes define how each product can either be directly purchased or constructed from other products. If a product can be constructed, the script explores whether it's cheaper to buy the components or build them from other subcomponents recursively. The result is the minimum cost to produce the target product.
 
 ### Input Format
 
@@ -85,9 +76,6 @@ The output would be:
 61.00
 ```
 
-### Prerequisites
-- Python 3.x
-  
 ## Limitations
 - If a product is not available for purchase or cannot be constructed due to missing ingredients, the function will return an infinite cost (inf).
 - The input format must strictly follow the defined structure, with commas separating product properties and semicolons for ingredients.
